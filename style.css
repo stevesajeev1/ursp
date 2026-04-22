@@ -109,9 +109,8 @@ body {
   content: "";
   display: block;
   position: absolute;
-  top: 50%;
+  top: calc(var(--line-spacing) / 2);
   left: calc(var(--line-spacing) * -0.3);
-  transform: translateY(-50%);
   width: calc(var(--line-spacing) / 8);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -140,7 +139,8 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  column-gap: 30px;
+  overflow-anchor: none;
 }
 
 #photos-container img {
@@ -152,4 +152,23 @@ body {
 #photos-container figcaption {
   font-size: calc(var(--line-spacing) / 1.75);
   text-align: center;
+}
+
+@media (max-width: 750px) {
+  :root {
+    --rule-spacing: 0;
+    --rule-width: 0;
+  }
+
+  #toc {
+    display: none;
+  }
+
+  #content {
+    padding-right: 10px;
+  }
+
+  #photos-container {
+    grid-template-columns: 1fr;
+  }
 }
