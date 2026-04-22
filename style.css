@@ -80,6 +80,7 @@ body {
 #toc li a {
   text-decoration: none;
   color: var(--text);
+  font-size: calc(var(--line-spacing) / 2 - 4px);
   font-weight: bold;
 }
 
@@ -94,6 +95,29 @@ body {
   line-height: var(--line-spacing);
 }
 
+.section ul {
+  padding-left: var(--line-spacing);
+  list-style-type: none;
+}
+
+.section ul li {
+  position: relative;
+  font-size: calc(var(--line-spacing) / 2 - 4px);
+}
+
+.section ul li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: calc(var(--line-spacing) * -0.3);
+  transform: translateY(-50%);
+  width: calc(var(--line-spacing) / 8);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: black;
+}
+
 .section h3 {
   font-size: calc(var(--line-spacing) - 4px);
 }
@@ -103,7 +127,29 @@ body {
   text-decoration: underline;
 }
 
+.section h5 {
+  font-size: calc(var(--line-spacing) / 1.75);
+}
+
 .section p {
   font-family: "Caveat", cursive;
   font-size: calc(var(--line-spacing) / 1.75);
+}
+
+#photos-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+#photos-container img {
+  max-width: 100%;
+  height: round(nearest, 100%, var(--line-spacing));
+  vertical-align: middle;
+}
+
+#photos-container figcaption {
+  font-size: calc(var(--line-spacing) / 1.75);
+  text-align: center;
 }
