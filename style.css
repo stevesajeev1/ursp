@@ -11,8 +11,6 @@
   --line-width: 1px;
   --line: #0000FF;
 
-  --header-height: 150px;
-
   --text: #18181A;
 }
 
@@ -41,12 +39,12 @@ body {
 }
 
 #header {
-  height: var(--header-height);
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-left: var(--rule-spacing);
   font-size: 80px;
+  text-align: center;
 }
 
 #body {
